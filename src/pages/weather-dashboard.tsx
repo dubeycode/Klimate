@@ -1,9 +1,13 @@
-
+import { Button } from "@/components/ui/button";
+import { RefreshCw } from "lucide-react";
 
 const WeatherDashboard = () => {
-  return (
-    <div>WeatherDashboard</div>
-  )
-}
+    
 
-export default WeatherDashboard
+
+  return (
+   
+  );
+};
+
+export default WeatherDashboard;
