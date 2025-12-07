@@ -4,7 +4,7 @@ import type { Coordinates, ForecastData, GeocodingResponse, WeatherData } from "
 class WeatherAPI{
   private createUrl(endpoint:string,params:Record<string,string | number>){
     const searchParam = new URLSearchParams({
-      aapid:API_CONFIG.Api_KEY,
+      appid:API_CONFIG.API_KEY,
       ...params,
     });
 

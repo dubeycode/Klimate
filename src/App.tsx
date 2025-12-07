@@ -6,7 +6,16 @@ import CityPage from "./pages/city-page";
 import {QueryClient, QueryClientProvider} from "@tanstack/react-query"
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 
-const queryClint = new QueryClient();
+const queryClint = new QueryClient({
+  defaultOptions:{
+    queries:{
+      staleTime:5*60*1000, // 5minutes
+      gcTime:10*60*1000,  //10 minutes
+      retry:false,
+      refetchOnWindowFocus:false,
+    },
+  }
+});
 
 function App() {
 
