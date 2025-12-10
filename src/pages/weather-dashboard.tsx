@@ -9,6 +9,7 @@ import {
 } from "@/hooks/use-weather";
 import { MapPin, RefreshCw } from "lucide-react";
 import CurrentWeather from "@/components/current-weather";
+import HourlyTemprature from "@/components/hourly-temprature";
 
 const WeatherDashboard = () => {
   const {
@@ -109,17 +110,18 @@ const WeatherDashboard = () => {
       </div>
       {/* Current and Hourly weatehr */}
       <div className="grid gap-6">
-        <div>
-            <CurrentWeather 
+        <div className="flex flex-col lg:flex-row gap-4">
+          <CurrentWeather
             data={weatherQuery.data}
             locationName={locationName}
-            />
+          />
+
+          <HourlyTemprature data={forecastQuery.data} />
         </div>
 
         <div>
-              {/* details */}
-              {/* forecast */}
-                  
+          {/* details */}
+          {/* forecast */}
         </div>
       </div>
     </div>
