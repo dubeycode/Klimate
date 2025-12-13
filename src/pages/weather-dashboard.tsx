@@ -10,6 +10,7 @@ import {
 import { MapPin, RefreshCw } from "lucide-react";
 import CurrentWeather from "@/components/current-weather";
 import HourlyTemprature from "@/components/hourly-temprature";
+import WeatherDetails from "@/components/WeatherDetails";
 
 const WeatherDashboard = () => {
   const {
@@ -121,6 +122,7 @@ const WeatherDashboard = () => {
 
         <div>
           {/* details */}
+          <WeatherDetails data={weatherQuery.data} />
           {/* forecast */}
         </div>
       </div>
