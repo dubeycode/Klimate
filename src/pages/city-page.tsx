@@ -7,8 +7,7 @@ import CurrentWeather from "@/components/current-weather";
 import WeatherDetails from "@/components/WeatherDetails";
 import HourlyTemprature from "@/components/hourly-temprature";
 import WeatherForcast from "@/components/weatherForcast";
-import { FavoriteButton } from "@/components/favorite-button";
-
+import FavoriteButton from "@/components/favorite-button";
 
 const CityPage = () => {
   const [searchParams] = useSearchParams()
