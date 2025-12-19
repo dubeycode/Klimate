@@ -62,9 +62,9 @@ const CitySearch = () => {
           {query.length > 2 && !isLoading && (
             <CommandEmpty>No Cities found.</CommandEmpty>
           )}
-          <CommandGroup heading="Favorites">
+          {/* <CommandGroup heading="Favorites">
             <CommandItem>Search you City 🌤️ 🌦️ ☔ </CommandItem>
-          </CommandGroup>
+          </CommandGroup> */}
 
 
            {/* Search History Section */}

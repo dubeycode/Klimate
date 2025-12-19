@@ -12,6 +12,7 @@ import CurrentWeather from "@/components/current-weather";
 import HourlyTemprature from "@/components/hourly-temprature";
 import WeatherDetails from "@/components/WeatherDetails";
 import WeatherForcast from "@/components/weatherForcast";
+import FavoriteCities from "@/components/FavoriteCities";
 
 const WeatherDashboard = () => {
   const {
