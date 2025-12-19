@@ -1,6 +1,7 @@
 // src/hooks/use-favorites.ts
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { useLocalStorage } from "./use-local-storage";
+import { toast } from "sonner";
 
 export interface FavoriteCity {
   id: string;
@@ -11,6 +12,9 @@ export interface FavoriteCity {
   state?: string;
   addedAt: number;
 }
+
+ const MAX_FAVORITES = 4;
+
 
 export function useFavorites() {
   const [favorites, setFavorites] = useLocalStorage<FavoriteCity[]>(
@@ -26,8 +30,14 @@ export function useFavorites() {
     staleTime: Infinity, // Since we're managing the data in localStorage
   });
 
+ 
+   
   const addFavorite = useMutation({
     mutationFn: async (city: Omit<FavoriteCity, "id" | "addedAt">) => {
+       if (favorites.length >= MAX_FAVORITES) {
+        toast.info("You’ve hit the free limit upgrade to add more cities.");
+        return favorites;
+       }
       const newFavorite: FavoriteCity = {
         ...city,
         id: `${city.lat}-${city.lon}`,
